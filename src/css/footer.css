@@ -1,0 +1,24 @@
+.footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .redes-css {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .redes-css li {
+    display: inline-block;
+    margin-right: 10px;
+    
+  }
+  
+  .redes-css a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+  }

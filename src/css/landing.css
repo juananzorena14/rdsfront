@@ -1,0 +1,45 @@
+.contenedor {
+  display: flex;
+
+  justify-content: center;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3px;
+}
+
+/* .padre {
+    display: flex;
+   
+    align-items: center;
+    height: 100vh;
+ } */
+
+.div {
+  display: grid;
+  /* grid-template-rows: ; */
+}
+
+@media (min-widht: 768px) {
+  .div {
+    display: inline;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+  }
+  .imagen {
+    display: inline-block;
+    height: 100%;
+  }
+  .imagen img {
+    display: flex;
+    height: 100%;
+    object-fit: cover;
+  }
+}

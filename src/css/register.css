@@ -1,0 +1,41 @@
+#registerForm {
+    align-self: center;
+    justify-self: center;
+}
+.fondo{
+    display: flex;
+    justify-content: center;
+    background-image: url(https://i.joecomp.com/img/food/484/15-mouth-watering-food-hd-wallpapers-for-desktop_1.jpg);
+    background-repeat: no-repeat;
+   
+    background-size: cover;
+  background-position: top;
+  height: 100vh;
+
+
+}
+.publicidad{
+
+    max-height: 400px;
+}
+
+.publicidad img{
+    object-fit: contain;
+
+}
+
+.transparente{
+    
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=80);
+    -khtml-opacity: 0.8;
+   
+    }
+
+/* 
+    @media screen and (max-width: 390px) {
+        .publicidad {
+          display: none;
+        }
+      } */

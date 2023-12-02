@@ -1,0 +1,20 @@
+.fondo{
+    display: flex;
+    justify-content: center;
+    background-image: url(https://i.joecomp.com/img/food/484/15-mouth-watering-food-hd-wallpapers-for-desktop_1.jpg);
+    background-repeat: no-repeat;
+   
+    background-size: cover;
+  background-position: top;
+  height: 100vh;
+
+
+}
+
+.transparente{
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=80);
+    -khtml-opacity: 0.8;
+   
+    }
