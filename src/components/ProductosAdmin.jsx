@@ -9,28 +9,31 @@ import BtnPaginationProd from "../components/BtnPaginationProd";
 import ModalProductUpdate from "./ModalProductUpdate";
 
 const ProductosAdmin = () => {
-  const [pagina, setPagina] = useState(0); //desde
-  //cargar productos
-  const { datos } = useGetProducts(pagina);
-  const [show, setShow] = useState(false); //Estado para manejo de Modal
-  const [producto, setProducto] = useState(null); //datos del producto a actualizar
+    const [pagina, setPagina] = useState(0); //desde
 
-  const handleClose = () => {
-    //Función para cerrar modal
+//CARGAR PRODUCTOS
+const {datos} = useGetProducts(pagina);
+
+//MANEJO DEL MODAL
+const [show, setShow] = useState(false); 
+const [producto, setProducto] = useState(null); //datos del producto a actualizar
+
+    //FUNCIÓN PARA CERRAR MODAL 
+    const handleClose = () => { 
     setProducto(null);
     setShow(false);
-  };
+    };
 
-  const handleShow = (datos) => {
-    //Función para mostrar modal
+    //FUNCIÓN PARA ABRIR MODAL 
+    const handleShow = (datos) => {
     setProducto(datos);
     setShow(true);
-  };
+    };
 
-  //Función para modificar estado de producto
-  const modificarProducto = (datos) => {
+    //FUNCIÓN PARA MODIFICAR PRODUCTO
+    const modificarProducto = (datos) => {
     setProducto(datos);
-  };
+    };
 
   const borrarProducto = async (id) => {
     const validar = confirm("Está seguro que quiere borrar el producto?");
@@ -40,21 +43,21 @@ const ProductosAdmin = () => {
     }
   };
 
-  //Funciones para manejo de paginación---------
-  const nextPage = () => {
+//FUNCIONES DE PAGINACIÓN
+const nextPage = () => {
     //total de los productos = 8 / 2 página
     const totalPages = datos.total / 5;
     console.log(totalPages);
     if (pagina + 1 < totalPages) {
       setPagina(pagina + 5);
     }
-  };
+};
 
-  const backPage = () => {
+const backPage = () => {
     if (pagina >= 5) {
       setPagina(pagina - 5);
     }
-  };
+};
   //---------------------------------------------
 
   return (
@@ -76,10 +79,10 @@ const ProductosAdmin = () => {
             {datos?.productos.length > 0 &&
               datos.productos.map((producto) => (
                 <tr key={producto._id}>
-                  <td>{producto.nombre}</td>
-                  <td>{producto.categoria.nombre}</td>
-                  <td>{producto.precio}</td>
-                  <td>{producto.stock}</td>
+                  <td>{producto.name}</td>
+                  <td>{producto.categoria.name}</td>
+                  <td>{producto.description}</td>
+                  <td>{producto.price}</td>
                   <td>
                     <div>
                       <button
@@ -101,7 +104,7 @@ const ProductosAdmin = () => {
           </tbody>
         </table>
 
-        {/* Componente del Modal con sus respectivos Props  */}
+        {/*Componente del Modal con sus respectivos Props */} 
         {producto && (
           <ModalProductUpdate
             show={show}

@@ -2,7 +2,6 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { usuarioAdd } from "../api/usuariosApi";
 import "../css/register.css";
-import pedidosYa from "../assets/pedidos-ya.jpg";
 
 const RegistroUsuarioApp = () => {
   const {

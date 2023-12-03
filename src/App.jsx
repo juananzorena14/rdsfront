@@ -8,9 +8,10 @@ import CardBuyApp from "./components/Pay";
 import LandingPage from "./views/LandingPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import ProductosScreen from "./views/ProductosScreen";
+import MainScreen from "./views/MainScreen";
 import ErrorScreen from "./views/ErrorScreen";
 import CarritoScreen from "./views/CarritoScreen";
+import AdminScreen from "./views/AdminScreen";
 
 function App() {
   return (
@@ -30,9 +31,9 @@ function App() {
         {/* <Route path="/carrito" element={<CarritoScreen/>}/> */}
 
         <Route path="/register" element={<RegistroUsuarioApp />} />
-        <Route path="/productos" element={<ProductosScreen />} />
+        <Route path="/main" element={<MainScreen />} />
         <Route path="/login" element={<LoginScreen />} />
-
+        <Route path="/admin" element={<AdminScreen/>} />
         <Route path="*" element={<ErrorScreen />} />
       </Routes>
       <Footer />

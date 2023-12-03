@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { productsList } from "../api/productsApi";
 import imagenPortada from "../assets/portad.jpg";
 import "../css/tarjetasPrincipal.css";
+import {categoryList} from "../api/categoriasApi"
 
-const ProductosScreen = () => {
-  const [producEstado, setProducEstado] = useState([]);
+const MainScreen = () => {
+  const [categoriaEstado, setCategoriaEstado] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { categoria } = useParams(); //categoria = bebidas
+  const {categoria} = useParams(); //categoria = bebidas
 
   useEffect(() => {
-    traerProductosFiltrados();
+    traerCategorias();i
   }, []);
 
-  const traerProductosFiltrados = async () => {
-    //ejecutaria getProductos para traer todos los productos
-    const { productos } = await productsList();
+  const traerCategorias = async () => {
+    const {categorias} = await categoryList();
 
-    const productosFiltrados = productos.filter((produc) => {
-      return produc.categoria === categoria;
+    const categoriasFiltradas = categorias.filter((categ) => {
+      return categ.categoria === categoria;
     });
 
-    setProducEstado(productosFiltrados);
+    setCategoriaEstado(categoriasFiltradas);
     setLoading(false);
+    console.log(categorias);
   };
 
 
@@ -78,18 +78,17 @@ const ProductosScreen = () => {
           </div>
         ) : (
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            {producEstado.length > 0 ? (
-              producEstado.map((producto) => (
-                <div className="col" key={productosFiltrados.categoria}>
+            {categoriaEstado.length > 0 ? (
+              categoriaEstado.map((categoria) => (
+                <div className="col" key={categoria._id}>
                   <div className="card h-100 tarjeta">
                     <img
-                      src={productosFiltrados.img}
-                      className="card-img img-cards"
-                      alt={productosFiltrados.nombre}
+                      src={categoria.img}
+                      className="card-img-top img-card"
+                      alt={categoria.name}
                     />
                     <div className="card-body tarjeta">
-                      <h5 className="card-title">{productosFiltrados.nombre}</h5>
-                      <p className="card-text">{productosFiltrados.descripcion}</p>
+                      <h5 className="card-title">{categoria.name}</h5>
                     </div>
                     <div>
                       <button onClick={agregarAlCarrito} to="/pay" className="btn btn-success  btn-lg ms-4">
@@ -111,4 +110,4 @@ const ProductosScreen = () => {
   );
 };
 
-export default ProductosScreen;
+export default MainScreen;

@@ -20,7 +20,7 @@ const LandingPage = () => {
             </h4>
             <p className="subtitle text-center">Explorá nuestro sitio web.</p>
             <div className="boton">
-              <Link type="button" class="btn btn-dark" to="/productos">
+              <Link type="button" class="btn btn-dark" to="/main">
                 Empezar ahora
               </Link>
             </div>

@@ -12,7 +12,7 @@ const AdminScreen = () => {
   useEffect(() => {
     queRolEs();
   }, []);
-
+  
   const queRolEs = async () => {
     const respuesta = await obtenerDatosAuth(token);
 
@@ -38,7 +38,7 @@ const AdminScreen = () => {
           </div>
         </div>
       ) : role ? (
-        role === "ADMIN_ROLE" ? (
+        role === "ADMIN" ? (
           <div className="container">
             <div className="row pt-5">
               <div className="col">
@@ -48,7 +48,7 @@ const AdminScreen = () => {
             <ProductosAdmin />
           </div>
         ) : (
-          <Navigate to="/" />
+          <Navigate to="/main" />
         )
       ) : (
         <div className="container">
