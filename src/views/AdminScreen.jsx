@@ -4,13 +4,13 @@ import { Navigate, Link } from "react-router-dom";
 import { obtenerDatosAuth } from "../api/authApi";
 import ProductosAdmin from "../components/ProductosAdmin";
 
+
 const AdminScreen = () => {
   const [role, setRole] = useState(null);
   const [mensaje, setMensaje] = useState(null);
   const token = JSON.parse(localStorage.getItem("token")) || null;
-  const role = JSON.parse(localStorage.getItem("role")) || null;
 
-  useEffect(() => {
+  useEffect (() => {
     queRolEs();
   }, []);
   

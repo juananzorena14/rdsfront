@@ -81,7 +81,7 @@ const backPage = () => {
               datos.productos.map((producto) => (
                 <tr key={producto._id}>
                   <td>{producto.name}</td>
-                  <td>{producto.categoria.name}</td>
+                  <td>{producto.categoria}</td>
                   <td>{producto.description}</td>
                   <td>{producto.price}</td>
                   <td>
