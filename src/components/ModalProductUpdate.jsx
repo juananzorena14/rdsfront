@@ -48,13 +48,13 @@ const ModalProductUpdate = ({show, handleClose, producto, setProducto}) => {
             >
               <section className="row">
                 <fieldset className="col-12 ">
-                  <label htmlFor="Nombre-input" className="form-label">
+                  <label htmlFor="name-input" className="form-label">
                     Nombre
                   </label>
                   <input
                     type="text"
-                    id="Nombre-input"
-                    name="nombre"
+                    id="name-input"
+                    name="name"
                     className="form-control"
                     value={producto.name}
                     onChange={handleChange}
@@ -69,13 +69,28 @@ const ModalProductUpdate = ({show, handleClose, producto, setProducto}) => {
                   <textarea
                     type="text"
                     id="description-input"
-                    name="descripcion"
+                    name="description"
                     className="form-control"
                     value={producto.description}
                     onChange={handleChange}
                     required
                   ></textarea>
                 </fieldset>
+                <fieldset className="col-12 ">
+                  <label htmlFor="price-input" className="form-label">
+                    Precio
+                  </label>
+                  <input
+                    type="text"
+                    id="price-input"
+                    name="price"
+                    className="form-control"
+                    value={producto.price}
+                    onChange={handleChange}
+                    required
+                  />
+                </fieldset>
+    
                 <fieldset className="col-12">
                   <label htmlFor="categoria-input" className="form-label">
                     Categoría
@@ -90,7 +105,7 @@ const ModalProductUpdate = ({show, handleClose, producto, setProducto}) => {
                     {datosCategorias?.length > 0 &&
                       datosCategorias.map((categoria) => (
                         <option key={categoria._id} value={categoria._id}>
-                          {categoria.nombre}
+                          {categoria.name}
                         </option>
                       ))}
                   </select>
@@ -100,7 +115,7 @@ const ModalProductUpdate = ({show, handleClose, producto, setProducto}) => {
                     <input
                       className="form-check-input"
                       type="checkbox"
-                      name="estado"
+                      name="state"
                       role="switch"
                       id="flexSwitchCheckChecked"
                       checked={producto.state}

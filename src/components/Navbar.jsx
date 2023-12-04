@@ -2,9 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../css/navbar.css";
 import imagenPortada from "../assets/descarga1.jpg"
-import ModalLogin from "../components/ModalLogin"
 
-const Navbar = () => {
+const Navbar = (estadoLogin) => {
     // const [show, setShow] = useState(false);
     // const handleClose = () => setShow(false);
     // const handleShow = () => setShow(true);
@@ -45,7 +44,7 @@ const Navbar = () => {
                 Pedidos
               </NavLink>
             </li>
-            <li className="nav-item">
+            {estadoLogin && <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
                   isActive ? "nav-link fw-bold" : "nav-link"
@@ -53,8 +52,8 @@ const Navbar = () => {
               >
                 Registrarse
               </NavLink>
-            </li>
-            <li className="nav-item">
+            </li>}
+            {estadoLogin && <li className="nav-item">
               <NavLink 
                 className={({ isActive }) =>
                   isActive ? "nav-link fw-bold" : "nav-link"
@@ -63,7 +62,17 @@ const Navbar = () => {
               >
                 Iniciar Sesión
               </NavLink>
-            </li>
+            </li>}
+            {!estadoLogin && <li className="nav-item">
+              <NavLink 
+                className={({ isActive }) =>
+                  isActive ? "nav-link fw-bold" : "nav-link"
+                }
+                to="/admin"
+              >
+                Administrador
+              </NavLink>
+            </li>}
            
 
           </ul>

@@ -7,7 +7,8 @@ import MainScreen from '../views/MainScreen'
 import RegistroUsuarioApp from '../components/RegistroUsuario'
 import LoginScreen from '../views/LoginScreen'
 import AdminScreen from '../views/AdminScreen'
-
+import ProductosScreen from '../views/ProductosScreen'
+import CarritoScreen from "../views/CarritoScreen";
 
 const RouterPrimary = () => {
   return (
@@ -19,6 +20,9 @@ const RouterPrimary = () => {
       <Route path="/pay" element={<CardBuyApp/>}/>
       <Route path="/admin" element={<AdminScreen/>}/>
       <Route path="/" element={<LandingPage/>}/>
+      <Route path="/productos" element={<ProductosScreen/>}/>
+      <Route path="/carrito" element={<CarritoScreen/>}/>
+
 
     </Routes>
   )

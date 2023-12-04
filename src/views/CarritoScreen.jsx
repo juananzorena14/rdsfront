@@ -1,96 +1,81 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 import Table from "react-bootstrap/Table";
+import { Button } from "react-bootstrap";
 
 import "../css/carrito.css";
 
 const Carrito = () => {
   const [miCarrito, setMiCarrito] = useState([]);
+  const [borrar, setBorrar] = useState([]);
+
+  console.log(miCarrito);
 
   useEffect(() => {
     const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
     setMiCarrito(carritoGuardado);
   }, []);
 
+  const eliminar = (index) => {
+    miCarrito.splice(index,1);
+    localStorage.setItem("carrito", JSON.stringify(miCarrito));
+    setBorrar(miCarrito);
+  };
+
   return (
-    <div className="container">
-      <div className="row ">
+    <div className="container-fluid ">
+      <div className="">
         <div>
           {miCarrito.length === 0 ? (
-            <div className=" carrito">
+            <div className="carrito ">
               <h1>Carrito vacio</h1>
-              <Link type="button" className="btn btn-dark" to="/productos">
+              <Link type="button" className="btn btn-dark" to="/main">
                 Comprar
               </Link>
             </div>
           ) : (
-            <Table>
-              <thead>
-                <tr>
-                  <th>Nombre</th>
-                  <th>Precio</th>
-                </tr>
-              </thead>
-              <tbody>
-                {miCarrito.map((producto, index) => (
-                  <tr key={index}>
-                    <td>{producto.nombre}</td>
-                    <td>{producto.precio}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
+            <div className="row mt-0">
+              <div className="col">
+                <h3>Carrito de compras</h3>
+                <Table>
+                  <thead>
+                    <tr>
+                      <th>Producto</th>
+                      <th>Descripción</th>
+                      <th>Precio</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {miCarrito.map((producto, index) => (
+                      <tr key={index}>
+                        <td>{producto.name}</td>
+                        <td>{producto.description}</td>
+                        <td>{producto.price}</td>
+                        <Button
+                          onClick={() => eliminar(producto)}
+                          className="btn btn-success btn-lg"
+                        >
+                          X
+                        </Button>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              </div>
+              <div className="div">
+                <Link className='btn btn-success mb-2' to="/pay">Finalizar Compra</Link>
+              </div>
+              <div className="div">
+                <Link className='btn btn-success mb-2' to="/main">Agregar más</Link>
+              </div>
+            </div>
           )}
         </div>
       </div>
     </div>
   );
-
-  //     <div className="App">
-  //       <h1>Carrito de Compras</h1>
-  //       <div>
-  //         <h2>Productos Disponibles</h2>
-  //         <ul>
-  //           {carrito.map((producto) => (
-  //             <li key={producto.id}>
-  //               {producto.nombre} - ${producto.precio}
-  //               <button onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
-  //             </li>
-  //           ))}
-  //         </ul>
-  //       </div>
-  //       <div>
-  //         <h2>Carrito</h2>
-  //         <ul>
-  //           {carrito.map((producto) => (
-  //             <li key={producto.id}>
-  //               {producto.nombre} - ${producto.precio}
-  //             </li>
-  //           ))}
-  //         </ul>
-  //         <p>Total: ${calcularTotal()}</p>
-  //       </div>
-  //     </div>
-  //   );
 };
 
 export default Carrito;
-
-// const CarritoScreen = () => {
-//   return (
-//     <div className="containe">
-//         <div className="row ">
-//             <div className=" carrito">
-//                 <h1>Carrito vacio</h1>
-//             <Link type="button" className="btn btn-dark" to='/productos'>
-//               Comprar
-//             </Link>
-//             </div>
-
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default CarritoScreen

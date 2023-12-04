@@ -5,7 +5,7 @@ import { login } from "../api/authApi";
 
 import '../css/login.css'
 
-const LoginScreen = () => {
+const LoginScreen = (setEstadoLogin) => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
@@ -29,6 +29,7 @@ const LoginScreen = () => {
       localStorage.setItem("token", JSON.stringify(respuesta.token));
       localStorage.setItem("role", JSON.stringify(respuesta.role));
       navigate("/");
+      setEstadoLogin(true);
     }
   };
 

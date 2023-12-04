@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import RouterPrimary from "./router/RouterPrimary";
 import ProtectedRoutes from "./router/ProtectedRoutes";
 import LoginScreen from "./views/LoginScreen";
@@ -12,29 +12,26 @@ import MainScreen from "./views/MainScreen";
 import ErrorScreen from "./views/ErrorScreen";
 import CarritoScreen from "./views/CarritoScreen";
 import AdminScreen from "./views/AdminScreen";
+import ProductosScreen from "./views/ProductosScreen";
 
 function App() {
+  const [estadoLogin, setEstadoLogin] = useState (false)
+
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        {/* <Route
-          path="/*"
-          element={
-            <ProtectedRoutes>
-              <RouterPrimary />
-            </ProtectedRoutes>
-          }
-        /> */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/pay" element={<CardBuyApp/>}/>
         {/* <Route path="/carrito" element={<CarritoScreen/>}/> */}
-
         <Route path="/register" element={<RegistroUsuarioApp />} />
         <Route path="/main" element={<MainScreen />} />
-        <Route path="/login" element={<LoginScreen />} />
-        <Route path="/admin" element={<AdminScreen/>} />
+        <Route path="/login" element={<LoginScreen setEstadoLogin={setEstadoLogin} />} />
+        <Route path="/admin" element={<ProtectedRoutes estadoLogin={estadoLogin}><AdminScreen/></ProtectedRoutes>} />
         <Route path="*" element={<ErrorScreen />} />
+        <Route path="/productos/:categoria" element={<ProductosScreen />} />
+        <Route path="/carrito" element={<CarritoScreen setEstadoLogin={setEstadoLogin} />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>

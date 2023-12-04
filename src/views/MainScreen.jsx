@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import imagenPortada from "../assets/portad.jpg";
+import { Link, useParams } from "react-router-dom";
+//import imagenPortada from "../assets/portad.jpg";
 import "../css/tarjetasPrincipal.css";
 import {categoryList} from "../api/categoriasApi"
 
@@ -27,15 +27,15 @@ const MainScreen = () => {
   };
 
 
-    const agregarAlCarrito=(producto)=>{
-      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  //   const agregarAlCarrito=(producto)=>{
+  //     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
    
-      // Agrega el producto al arreglo.
-      carrito.push(producto);
+  //     // Agrega el producto al arreglo.
+  //     carrito.push(producto);
    
-      // Guarda el arreglo actualizado en la localStorage.
-      localStorage.setItem('carrito', JSON.stringify(carrito));
-   }
+  //     // Guarda el arreglo actualizado en la localStorage.
+  //     localStorage.setItem('carrito', JSON.stringify(carrito));
+  //  }
 
   
 
@@ -57,8 +57,7 @@ const MainScreen = () => {
   return (
     <div className="container-fluid">
       <div className="row d-block ">
-        {/* ---------------------esto agrege yo imagen portada --------------------*/}
-
+{/* -----imagen portada-------- */}
         <div className="col-12 col-md portada   ">
           <div className=" col-4 col-md-5 mt-3 ">
             <h3 className="text-end texto fst-italic fs-2">
@@ -69,8 +68,7 @@ const MainScreen = () => {
             </p>
           </div>
         </div>
-
-        {/* --------------------------hasta aca---------------------- */}
+{/* ----------------------- */}
 
         {loading ? (
           <div className="col">
@@ -81,25 +79,25 @@ const MainScreen = () => {
             {categoriaEstado.length > 0 ? (
               categoriaEstado.map((categoria) => (
                 <div className="col" key={categoria._id}>
-                  <div className="card h-100 tarjeta">
+                  <div className="card  tarjeta">
                     <img
                       src={categoria.img}
                       className="card-img-top img-card"
                       alt={categoria.name}
                     />
-                    <div className="card-body tarjeta">
+                    <div className="card-body ">
                       <h5 className="card-title">{categoria.name}</h5>
                     </div>
                     <div>
-                      <button onClick={agregarAlCarrito} to="/pay" className="btn btn-success  btn-lg ms-4">
-                        Comprar
-                      </button>
+                      <Link  to={`/productos/${categoria.name}`} className="btn btn-success  btn-lg ms-4">
+                        Ver más...
+                      </Link>
                     </div>
                   </div>
                 </div>
               ))
             ) : (
-              <div className="col">
+              <div className="col h-100">
                 <h3>No hay productos en esa categoría</h3>
               </div>
             )}
