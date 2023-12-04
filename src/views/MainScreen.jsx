@@ -11,7 +11,7 @@ const MainScreen = () => {
   const {categoria} = useParams(); //categoria = bebidas
 
   useEffect(() => {
-    traerCategorias();i
+    traerCategorias();
   }, []);
 
   const traerCategorias = async () => {

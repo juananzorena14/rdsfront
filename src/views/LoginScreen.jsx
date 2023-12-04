@@ -27,6 +27,7 @@ const LoginScreen = () => {
 
     if (respuesta?.token) {
       localStorage.setItem("token", JSON.stringify(respuesta.token));
+      localStorage.setItem("role", JSON.stringify(respuesta.role));
       navigate("/");
     }
   };

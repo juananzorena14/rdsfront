@@ -35,7 +35,8 @@ const [producto, setProducto] = useState(null); //datos del producto a actualiza
     setProducto(datos);
     };
 
-  const borrarProducto = async (id) => {
+    //FUNCIÓN PARA BORRAR PRODUCTO
+    const borrarProducto = async (id) => {
     const validar = confirm("Está seguro que quiere borrar el producto?");
     if (validar) {
       const respuesta = await productDelete(id);
@@ -58,7 +59,7 @@ const backPage = () => {
       setPagina(pagina - 5);
     }
 };
-  //---------------------------------------------
+
 
   return (
     <>
@@ -104,7 +105,7 @@ const backPage = () => {
           </tbody>
         </table>
 
-        {/*Componente del Modal con sus respectivos Props */} 
+{/*COMPONENTE DEL MODAL*/} 
         {producto && (
           <ModalProductUpdate
             show={show}
@@ -115,7 +116,8 @@ const backPage = () => {
         )}
       </div>
       <div className="col">
-        {/* Componente de paginación con sus funciones  */}
+        
+{/*COMPONENTE DE PAGINACIÓN*/}
         <BtnPaginationProd nextPage={nextPage} backPage={backPage} />
       </div>
     </>

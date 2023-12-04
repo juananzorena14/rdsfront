@@ -8,6 +8,7 @@ const AdminScreen = () => {
   const [role, setRole] = useState(null);
   const [mensaje, setMensaje] = useState(null);
   const token = JSON.parse(localStorage.getItem("token")) || null;
+  const role = JSON.parse(localStorage.getItem("role")) || null;
 
   useEffect(() => {
     queRolEs();

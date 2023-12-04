@@ -15,7 +15,7 @@ export const login = async (datos) => {
 };
 
 export const obtenerDatosAuth = async (token) => {
-  const res = await fetch(url, {
+  const res = await fetch(url + "/login", {
     method: "GET",
     headers: {
       "Content-type": "application/json; charset=UTF-8",
