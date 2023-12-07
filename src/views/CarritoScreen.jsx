@@ -64,11 +64,13 @@ const Carrito = () => {
                   </tbody>
                 </Table>
               </div>
-              <div className="div">
-                <Link className='btn btn-success mb-2' to="/pay">Finalizar Compra</Link>
+              <div className="row">
+              <div className="boton col">
+                <Link className='btn btn-success mb-2 ' to="/pay">Finalizar Compra</Link>
               </div>
-              <div className="div">
-                <Link className='btn btn-success mb-2' to="/main">Agregar más</Link>
+              <div className=" boton col">
+                <Link className='btn btn-success mb-2 ' to="/main">Agregar más</Link>
+              </div>
               </div>
             </div>
           )}

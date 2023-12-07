@@ -82,7 +82,7 @@ const MainScreen = () => {
                   <div className="card  tarjeta">
                     <img
                       src={categoria.img}
-                      className="card-img-top img-card"
+                      className="card-img-top img-cards"
                       alt={categoria.name}
                     />
                     <div className="card-body ">

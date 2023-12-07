@@ -7,7 +7,7 @@ import "../css/landing.css";
 const LandingPage = () => {
   return (
     <Container className="contenedor">
-      <Row className=" row div">
+      <Row className=" row div ">
         {/* <Col xs={12} md={6} className=" "> */}
         {/* <div className="div"> */}
           <div className=" col-md-6">
@@ -19,7 +19,7 @@ const LandingPage = () => {
               experiencia
             </h4>
             <p className="subtitle text-center">Explorá nuestro sitio web.</p>
-            <div className="boton">
+            <div className="boton ">
               <Link type="button" class="btn btn-dark" to="/main">
                 Empezar ahora
               </Link>
@@ -28,8 +28,8 @@ const LandingPage = () => {
           {/* </Col> */}
 
           {/* <Col xs={12} md={6} className=" "> */}
-          <div className="imagen col-md-6">
-            <img src={portada} alt="Imagen" className="img-fluid" />
+          <div className="imagen col-md-6 ">
+            <img src={portada} alt="Imagen" className="img-fluid h-100" />
           </div>
         {/* </div> */}
 

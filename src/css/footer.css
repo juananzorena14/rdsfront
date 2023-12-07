@@ -1,14 +1,17 @@
+
 .footer {
     background-color: black;
     color: #fff;
-    padding: 20px;
+    ;
     text-align: center;
+  
+    
   }
   
   .redes-css {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
+    margin:  0;
   }
   
   .redes-css li {

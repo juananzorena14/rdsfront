@@ -13,11 +13,14 @@ import ErrorScreen from "./views/ErrorScreen";
 import CarritoScreen from "./views/CarritoScreen";
 import AdminScreen from "./views/AdminScreen";
 import ProductosScreen from "./views/ProductosScreen";
+import './css/body.css'
+
 
 function App() {
   const [estadoLogin, setEstadoLogin] = useState (false)
 
   return (
+    <div className="main-container d-flex flex-column">
     <BrowserRouter>
       <Navbar />
       <Routes>
@@ -35,6 +38,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </div>
   );
 }
 

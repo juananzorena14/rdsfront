@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { productsList } from "../api/productsApi";
 import { Button } from "react-bootstrap";
-import '../css/tarjetasPrincipal.css'
+import '../css/productos.css'
 
 const ProductosScreen = () => {
   const [producEstado, setProducEstado] = useState([]);
@@ -51,14 +51,15 @@ const ProductosScreen = () => {
             {producEstado.length > 0 ? (
               producEstado.map((producto) => (
                 <div className="col" key={producto._id}>
-                  <div className="card h-100 tarjeta">
+                  {/* -------------------------------------- */}
+                  <div className="card cars">
                     <img
                       src={producto.img}
-                      className="card-img img-cards"
+                      className="card-img img-cards "
                       alt={producto.name}
                     />
-                    <div className="card-body ">
-                      <h5 className="card-title">{producto.name}</h5>
+                    <div className="card-body p-4 text">
+                      <h5 className="card-title ">{producto.name}</h5>
                       <p>{producto.description}</p>
                       <p className="fs-4">{producto.price}</p>
 
