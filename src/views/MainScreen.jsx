@@ -75,7 +75,7 @@ const MainScreen = () => {
             <h3>Cargando info...</h3>
           </div>
         ) : (
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
             {categoriaEstado.length > 0 ? (
               categoriaEstado.map((categoria) => (
                 <div className="col" key={categoria._id}>
@@ -88,8 +88,9 @@ const MainScreen = () => {
                     <div className="card-body ">
                       <h5 className="card-title">{categoria.name}</h5>
                     </div>
-                    <div>
-                      <Link  to={`/productos/${categoria.name}`} className="btn btn-success  btn-lg ms-4">
+
+                    <div className="caja">
+                      <Link  to={`/productos/${categoria.name}`} className="btn btn-success mb-2 btn-lg ms-4 boton">
                         Ver más...
                       </Link>
                     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { usuarioAdd } from "../api/usuariosApi";
+import { Link } from "react-router-dom";
 import "../css/register.css";
 
 const RegistroUsuarioApp = () => {
@@ -127,6 +128,11 @@ const RegistroUsuarioApp = () => {
                   Registrar
                 </button>
               </div>
+
+                {/* <button className="text-end">
+                <Link type="submit"
+                  className="btn btn-primary align-self-end" to="/main">Registrarse</Link>
+              </button> */}
             </form>
           </div>
           </div>

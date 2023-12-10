@@ -41,3 +41,14 @@
 
  
 }
+.boton {
+  display: flex;
+  /* margin-bottom: 3px; */
+}
+.caja{
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: px; */
+
+
+}

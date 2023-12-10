@@ -19,7 +19,7 @@ const LandingPage = () => {
               experiencia
             </h4>
             <p className="subtitle text-center">Explorá nuestro sitio web.</p>
-            <div className="boton ">
+            <div className="caja">
               <Link type="button" class="btn btn-dark" to="/main">
                 Empezar ahora
               </Link>

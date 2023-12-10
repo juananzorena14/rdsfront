@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { productsList } from "../api/productsApi";
 import { Button } from "react-bootstrap";
 import '../css/productos.css'
+// import { sumaTotal } from "../funciones/carrito";
 
 const ProductosScreen = () => {
   const [producEstado, setProducEstado] = useState([]);
@@ -55,10 +56,10 @@ const ProductosScreen = () => {
                   <div className="card cars">
                     <img
                       src={producto.img}
-                      className="card-img img-cards "
+                      className="card-img-top img-cards "
                       alt={producto.name}
                     />
-                    <div className="card-body p-4 text">
+                    <div className="card-body cars">
                       <h5 className="card-title ">{producto.name}</h5>
                       <p>{producto.description}</p>
                       <p className="fs-4">{producto.price}</p>
@@ -66,7 +67,9 @@ const ProductosScreen = () => {
                     </div>
                       <Link to="/carrito">
                     <Button
-                      onClick={() => agregarAlCarrito(producto)}
+                      onClick={() =>{agregarAlCarrito(producto);
+                      
+                      }   }
                       className="btn btn-success btn-lg"
                       >
                       Comprar

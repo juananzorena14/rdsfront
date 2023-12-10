@@ -24,6 +24,24 @@ const Carrito = () => {
     setBorrar(miCarrito);
   };
 
+   const sumaTotal = () => {
+    let total = 0;
+    console.log(total)
+  
+    miCarrito.forEach((index) => {
+      total = total + index.price;
+      // console.log(total)
+    });
+  
+    return total;
+
+  };
+  const restaTotal =()=>{
+    
+  }
+ 
+  
+
   return (
     <div className="container-fluid ">
       <div className="">
@@ -63,13 +81,16 @@ const Carrito = () => {
                     ))}
                   </tbody>
                 </Table>
+                <div className="suma">
+                <p>TOTAL: {sumaTotal()}</p>
+                </div>
               </div>
               <div className="row">
-              <div className="boton col">
-                <Link className='btn btn-success mb-2 ' to="/pay">Finalizar Compra</Link>
+              <div className="caja  ">
+                <Link className='btn btn-success boton mb-2 ' to="/pay">Finalizar Compra</Link>
               </div>
-              <div className=" boton col">
-                <Link className='btn btn-success mb-2 ' to="/main">Agregar más</Link>
+              <div className=" caja ">
+                <Link className='btn btn-success boton mb-2 ' to="/main">Agregar más</Link>
               </div>
               </div>
             </div>
