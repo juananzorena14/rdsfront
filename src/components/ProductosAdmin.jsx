@@ -90,13 +90,13 @@ const backPage = () => {
                         className="btn btn-danger btn-sm"
                         onClick={() => borrarProducto(producto._id)}
                       >
-                        X
+                        Borrar
                       </button>
                       <button
                         className="btn btn-warning btn-sm"
                         onClick={() => handleShow(producto)}
                       >
-                        X
+                        Editar
                       </button>
                     </div>
                   </td>

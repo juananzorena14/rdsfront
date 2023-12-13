@@ -13,7 +13,7 @@ const Navbar = (estadoLogin) => {
       <div className="container-fluid div-a">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "nav-link fw-bold" : "nav-link"
+            isActive ? " fw-bold" : "nav-link"
           }
           to="/"
         ><div className="imgLogo">
@@ -36,7 +36,7 @@ const Navbar = (estadoLogin) => {
             <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "nav-link fw-bold" : "nav-link"
+                  isActive ? " fw-bold" : "nav-link"
                 }
                 aria-current="page"
                 to="/carrito"
@@ -47,7 +47,7 @@ const Navbar = (estadoLogin) => {
             {estadoLogin && <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "nav-link fw-bold" : "nav-link"
+                  isActive ? " fw-bold" : "nav-link"
                 } to='/register'
               >
                 Registrarse
@@ -56,7 +56,7 @@ const Navbar = (estadoLogin) => {
             {estadoLogin && <li className="nav-item">
               <NavLink 
                 className={({ isActive }) =>
-                  isActive ? "nav-link fw-bold" : "nav-link"
+                  isActive ? " fw-bold" : "nav-link"
                 }
                 to="/login"
               >
@@ -66,7 +66,7 @@ const Navbar = (estadoLogin) => {
             {!estadoLogin && <li className="nav-item">
               <NavLink 
                 className={({ isActive }) =>
-                  isActive ? "nav-link fw-bold" : "nav-link"
+                  isActive ? " fw-bold" : "nav-link"
                 }
                 to="/admin"
               >
