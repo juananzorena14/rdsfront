@@ -1,45 +1,48 @@
-.contenedor {
-  display: flex;
+.landing-page {
+  background-image: url(https://nuestromenudigital.com/wp-content/uploads/2022/12/mas-chicoPORTADA.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  text-align: center;
+ }
+ 
+ .logo {
+  width: 500px;
+  height: 500px;
+ }
+ 
+ .company-name {
+  font-size: 100px;
+  color: #ffffff;
+  text-shadow: 
+  1px 1px 0 gray,
+  -1px 1px 0 gray,
+  -1px -1px 0 gray,
+  1px -1px 0 gray;
+ }
+ 
+ .welcome-text {
+  font-size: 35px;
+  color: #ffffff;
+  text-shadow: 
+  1px 1px 0 gray,
+  -1px 1px 0 gray,
+  -1px -1px 0 gray,
+  1px -1px 0 gray;
+ }
 
-  justify-content: center;
-}
-.row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.boton {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3px;
-}
+ .button-custom {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  transition: 0.3s;
+  position: absolute;
+  bottom: 0px;
 
-/* .padre {
-    display: flex;
-   
-    align-items: center;
-    height: 100vh;
- } */
-
-.div {
-  display: grid;
-  /* grid-template-rows: ; */
-}
-
-@media (min-widht: 768px) {
-  .div {
-    display: inline;
-    flex-direction: row;
-    align-items: center;
-    height: 100vh;
-  }
-  .imagen {
-    display: inline-block;
-    height: 100%;
-  }
-  .imagen img {
-    display: flex;
-    height: 100%;
-    object-fit: cover;
-  }
-}
+  size: 100px;
+ }
+ 
+ .button-custom:hover {
+  background-color: white;
+  color: transparent;
+ }
