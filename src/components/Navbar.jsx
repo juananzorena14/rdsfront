@@ -34,15 +34,9 @@ const Navbar = (estadoLogin) => {
         <div className="collapse navbar-collapse  " id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? " fw-bold" : "nav-link"
-                }
-                aria-current="page"
-                to="/carrito"
-              >
-                Pedidos
-              </NavLink>
+
+              <NavLink className={({ isActive }) => isActive ? " fw-bold" : "nav-link"} aria-current="page" to="/carrito">Pedidos</NavLink>
+
             </li>
             {estadoLogin && <li className="nav-item">
               <NavLink
@@ -63,7 +57,7 @@ const Navbar = (estadoLogin) => {
                 Iniciar Sesión
               </NavLink>
             </li>}
-            {!estadoLogin && <li className="nav-item">
+            {estadoLogin && <li className="nav-item">
               <NavLink 
                 className={({ isActive }) =>
                   isActive ? " fw-bold" : "nav-link"

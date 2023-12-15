@@ -1,56 +1,79 @@
-.contenedor {
-  display: flex;
- height: 100%
-  /* justify-content:center; */
-}
-.row {
-  display: flex;
-   height: 100%;  
-  justify-content: center;
-  align-items: center;
+.landing-page {
+  background-image: url(https://nuestromenudigital.com/wp-content/uploads/2022/12/mas-chicoPORTADA.jpg);
+  background-size: cover;
+  background-position: center;
   /* height: 100vh; */
-}
-/* .imagen img {
+  text-align: center;
   display: flex;
   height: 100vh;
-  object-fit: cover;
-} */
-.boton {
-  display: flex;
-  margin-bottom: 3px;
-}
-.caja{
-  display: flex;
+  width: 100vw;
+  margin: 0;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 3px;
+  
+ }
 
-
+.row{
+  width: 100%;
+  height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ gap: 20px;
 }
-
-
-.div {
+.col{
   display: flex;
-  /* grid-template-rows: ; */
-  /* height: 100vh; */
-}
-/* 
-@media (min-widht: 768px) {
- 
-} */
-@media (min-width: 992px){
-  .imagen {
-    /* display: inline-block; */
-    /* height: 100%; */
-    
-      display: flex;
-      height: 790px;
-      object-fit: cover;
-    
-  }
-  .imagen img {
-    display: flex;
-    height: 100vh;
-    object-fit: cover;
-  }
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
 
 }
+
+
+ .company-name {
+  font-size: 100px;
+  color: #ffffff;
+  text-shadow: 
+  1px 1px 0 gray,
+  -1px 1px 0 gray,
+  -1px -1px 0 gray,
+  1px -1px 0 gray;
+ }
+ 
+ .welcome-text {
+  font-size: 35px;
+  color: #ffffff;
+  text-shadow: 
+  1px 1px 0 gray,
+  -1px 1px 0 gray,
+  -1px -1px 0 gray,
+  1px -1px 0 gray;
+ }
+
+ .button-custom {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  transition: 0.3s;
+  /* position: absolute; */
+  padding: 20px 15px;
+font-size: 500px;
+  /* size: 100px; */
+ }
+ 
+ .button-custom:hover {
+  background-color: white;
+  color: transparent;
+ }
+ .logo{
+  border-radius: 50%;
+ }
+/* 
+ .col{
+  display: flex;
+  flex-direction: column;
+ } */
+
+
+
