@@ -19,21 +19,20 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar/>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />}/>
         <Route path="/pay" element={<CardBuyApp/>}/>
         {/* <Route path="/carrito" element={<CarritoScreen/>}/> */}
-        <Route path="/register" element={<RegistroUsuarioApp />} />
-        <Route path="/main" element={<MainScreen />} />
-        <Route path="/login" element={<LoginScreen setEstadoLogin={setEstadoLogin} />} />
-        <Route path="/admin" element={<ProtectedRoutes estadoLogin={estadoLogin}><AdminScreen/></ProtectedRoutes>} />
-        <Route path="*" element={<ErrorScreen />} />
-        <Route path="/productos/:categoria" element={<ProductosScreen />} />
-        <Route path="/carrito" element={<CarritoScreen setEstadoLogin={setEstadoLogin} />} />
-
+        <Route path="/register" element={<RegistroUsuarioApp />}/>
+        <Route path="/main" element={<MainScreen />}/>
+        <Route path="/login" element={<LoginScreen setEstadoLogin={setEstadoLogin} />}/>
+        <Route path="/admin" element={<ProtectedRoutes estadoLogin={estadoLogin}><AdminScreen/></ProtectedRoutes>}/>
+        <Route path="*" element={<ErrorScreen />}/>
+        <Route path="/productos/:categoria" element={<ProductosScreen/>}/>
+        <Route path="/carrito" element={<CarritoScreen setEstadoLogin={setEstadoLogin}/>}/>
       </Routes>
-      <Footer />
+      <Footer/>
     </BrowserRouter>
   );
 }
