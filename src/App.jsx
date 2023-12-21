@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="main-container d-flex flex-column">
     <BrowserRouter>
-      <Navbar />
+      <Navbar estadoLogin={estadoLogin} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/pay" element={<CardBuyApp/>}/>

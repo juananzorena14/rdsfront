@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "../css/navbar.css";
 import imagenPortada from "../assets/descarga1.jpg"
 
-const Navbar = (estadoLogin) => {
+const Navbar = ({estadoLogin={estadoLogin}}) => {
     // const [show, setShow] = useState(false);
     // const handleClose = () => setShow(false);
     // const handleShow = () => setShow(true);
@@ -38,7 +38,7 @@ const Navbar = (estadoLogin) => {
               <NavLink className={({ isActive }) => isActive ? " fw-bold" : "nav-link"} aria-current="page" to="/carrito">Pedidos</NavLink>
 
             </li>
-            {estadoLogin && <li className="nav-item">
+             <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
                   isActive ? " fw-bold" : "nav-link"
@@ -46,8 +46,8 @@ const Navbar = (estadoLogin) => {
               >
                 Registrarse
               </NavLink>
-            </li>}
-            {estadoLogin && <li className="nav-item">
+            </li>
+            <li className="nav-item">
               <NavLink 
                 className={({ isActive }) =>
                   isActive ? " fw-bold" : "nav-link"
@@ -56,8 +56,9 @@ const Navbar = (estadoLogin) => {
               >
                 Iniciar Sesión
               </NavLink>
-            </li>}
-            {estadoLogin && <li className="nav-item">
+            </li>
+            {estadoLogin && 
+            <li className="nav-item">
               <NavLink 
                 className={({ isActive }) =>
                   isActive ? " fw-bold" : "nav-link"
