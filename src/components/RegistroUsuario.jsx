@@ -32,7 +32,7 @@ const RegistroUsuarioApp = () => {
               <h1 className="text-center align-self-center">
                 Registro de Usuario
               </h1>
-              <section className="row">
+              <section className="">
                 <fieldset className="col-12 ">
                   <label htmlFor="nameUser-input" className="form-label">
                     Nombre completo

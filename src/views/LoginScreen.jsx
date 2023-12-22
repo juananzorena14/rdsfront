@@ -36,17 +36,17 @@ const LoginScreen = (setEstadoLogin) => {
 
   return (
     <div className="container-fluid fondo ">
-      <div className="row  d-flex vh-100 align-items-center">
-        <div className="col-12 col-md ">
+      <div className="row  align-items-center">
+        <div className="col-12  ">
           <div className="card transparente">
             <div className="card-body">
               <form
                 noValidate
                 onSubmit={handleSubmit(inicioSesion)}
-                className="bg-light text-dark p-3 rounded w-100 "
+                className="bg-light text-dark p-3 rounded w-100 d-flex flex-column "
               >
                 <h1 className="text-center">Inicio de sesión</h1>
-                <section className="row">
+                <section className="">
                   <fieldset className="col-12 ">
                     <label htmlFor="Email-input" className="form-label">
                       Correo

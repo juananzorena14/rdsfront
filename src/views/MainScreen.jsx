@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import "../css/tarjetasPrincipal.css";
 import {categoryList} from "../api/categoriasApi"
 
+
 const MainScreen = () => {
   const [categoriaEstado, setCategoriaEstado] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -56,7 +57,7 @@ const MainScreen = () => {
 
   return (
     <div className="container-fluid">
-      <div className="row d-block ">
+      <div className=" d-block ">
 {/* -----imagen portada-------- */}
         <div className="col-12 col-md portada   ">
           <div className=" col-4 col-md-5 mt-3 ">
@@ -75,7 +76,7 @@ const MainScreen = () => {
             <h3>Cargando info...</h3>
           </div>
         ) : (
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
+          <div className="row caja row-cols-1 row-cols-md-2 row-cols-lg-3 ">
             {categoriaEstado.length > 0 ? (
               categoriaEstado.map((categoria) => (
                 <div className="col" key={categoria._id}>
