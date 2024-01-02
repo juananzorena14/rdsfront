@@ -41,14 +41,14 @@ const ProductosScreen = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row d-block ">
+    <div className="container-fluid p-0">
+      <div className="container-fluid p-0 ">
         {loading ? (
           <div className="col">
             <h3>Cargando info...</h3>
           </div>
         ) : (
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div className="container m-0 mb-3 mt-3">
             {producEstado.length > 0 ? (
               producEstado.map((producto) => (
                 <div className="col" key={producto._id}>

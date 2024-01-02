@@ -56,8 +56,8 @@ const MainScreen = () => {
 //   } 
 
   return (
-    <div className="container-fluid">
-      <div className=" d-block ">
+    <div className="container-fluid p-0">
+      <div className="container-fluid p-0 ">
 {/* -----imagen portada-------- */}
         <div className="col-12 col-md portada   ">
           <div className=" col-4 col-md-5 mt-3 ">
@@ -76,7 +76,7 @@ const MainScreen = () => {
             <h3>Cargando info...</h3>
           </div>
         ) : (
-          <div className="row caja row-cols-1 row-cols-md-2 row-cols-lg-3 ">
+          <div className="  container mb-3 mt-3 ">
             {categoriaEstado.length > 0 ? (
               categoriaEstado.map((categoria) => (
                 <div className="col" key={categoria._id}>
