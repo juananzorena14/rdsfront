@@ -54,8 +54,8 @@ const Carrito = () => {
               </Link>
             </div>
           ) : (
-            <div className="row mt-0">
-              <div className="col">
+            <div className=" container mt-4">
+              <div className="">
                 <h3>Carrito de compras</h3>
                 <Table>
                   <thead>
@@ -85,8 +85,8 @@ const Carrito = () => {
                 <p>TOTAL: {sumaTotal()}</p>
                 </div>
               </div>
-              <div className="row">
-              <div className="caja  ">
+              <div className="col">
+              <div className="  ">
                 <Link className='btn btn-success boton mb-2 ' to="/pay">Finalizar Compra</Link>
               </div>
               <div className=" caja ">

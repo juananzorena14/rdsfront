@@ -18,8 +18,7 @@
 
 .caja{
     display :flex;
-    justify-content:center;
-    align-items: center;
+  
 
 
 }
@@ -41,3 +40,14 @@
     margin: 3px;
 
 }
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    
+    margin: 10px;
+  }
+  
+  
